@@ -33,7 +33,7 @@ export const PlanetCard = () => {
                         <h5 className="card-title">{planet.name}</h5>
                     </div>
                     <div className="Cardbtn">
-                        <Link className="secondpagebutton" to={"/planet-discription/" + planet.uid}>Learn More</Link>
+                        <Link className="secondpagebutton" to={"/planet-description/" + planet.uid}>Learn More</Link>
                         <button className="secondpagebutton" onClick={() => {handleFavorite(planet.name)}}>Favorite</button>
                     </div>
                 </div>

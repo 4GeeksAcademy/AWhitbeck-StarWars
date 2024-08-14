@@ -16,6 +16,7 @@ export const CharacterCard = () => {
     },
         []
     )
+
     const handleFavorite = (character) => {
         if (store.favorite.includes(character)) {
             actions.deleteFavorite(character)
@@ -33,7 +34,7 @@ export const CharacterCard = () => {
                         <h5 className="card-title">{character.name}</h5>
                     </div>
                     <div className="Cardbtn">
-                        <Link className="secondpagebutton" to={"/character-discription/" + character.uid}>Learn More</Link>
+                        <Link className="secondpagebutton" to={"/character-description/" + character.uid}>Learn More</Link>
                         <button className="secondpagebutton" onClick={() => {handleFavorite(character.name)}}>Favorite</button>
                     </div>
                 </div>

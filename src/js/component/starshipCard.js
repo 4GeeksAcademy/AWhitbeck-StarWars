@@ -33,7 +33,7 @@ export const StarshipsCard = () => {
                         <h5 className="card-title">{starship.name}</h5>
                     </div>
                     <div className="Cardbtn">
-                        <Link className="secondpagebutton" to={"/starship-discription/" + starship.uid}>Learn More</Link>
+                        <Link className="secondpagebutton" to={"/starship-description/" + starship.uid}>Learn More</Link>
                         <button className="secondpagebutton" onClick={() => {handleFavorite(starship.name)}}>Favorite</button>
                     </div>
                 </div>

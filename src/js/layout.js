@@ -8,12 +8,15 @@ import { Demo } from "./views/demo";
 import { Single } from "./views/single";
 import injectContext from "./store/appContext";
 import { Connections } from "./views/connections";
+import { CharacterDescription } from "./views/characterDescription";
+import { StarshipDescription } from "./views/starshipDescription";
 
 import { PlanetCard } from "./component/planetCard";
 import { StarshipsCard } from "./component/starshipCard";
 import { CharacterCard } from "./component/characterCard";
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
+
 
 //create your first component
 const Layout = () => {
@@ -27,6 +30,8 @@ const Layout = () => {
 				<ScrollToTop>
 					<Navbar />
 					<Routes>
+						<Route path="/starship-description/:id" element={<StarshipDescription />} />
+						<Route path="/character-description/:id" element={<CharacterDescription />} />
 						<Route path="/connections" element={<Connections />} />
 						<Route path="/welcome-page" element={<WelcomePage />} />
 						<Route path="/" element={<Home />} />
