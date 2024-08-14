@@ -2,11 +2,16 @@ import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 
+import { WelcomePage } from "./views/welcomePage";
 import { Home } from "./views/home";
 import { Demo } from "./views/demo";
 import { Single } from "./views/single";
 import injectContext from "./store/appContext";
+import { Connections } from "./views/connections";
 
+import { PlanetCard } from "./component/planetCard";
+import { StarshipsCard } from "./component/starshipCard";
+import { CharacterCard } from "./component/characterCard";
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 
@@ -22,6 +27,8 @@ const Layout = () => {
 				<ScrollToTop>
 					<Navbar />
 					<Routes>
+						<Route path="/connections" element={<Connections />} />
+						<Route path="/welcome-page" element={<WelcomePage />} />
 						<Route path="/" element={<Home />} />
 						<Route path="/demo" element={<Demo />} />
 						<Route path="/single/:theid" element={<Single />} />
