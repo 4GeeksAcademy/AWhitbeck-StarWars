@@ -38,9 +38,9 @@ export const StarshipDescription = () => {
                             <div className="size">
                                 <h4>CLASS:<br/> {starship.starship_class}</h4>
                                 <h4>COST:<br/> {starship.cost_in_credits} credits</h4>
-                                <h4>MAX SPEED:<br/> {starship.max_atmosphering_speed}</h4>
+                                <h4>MAX SPEED:<br/> {starship.max_atmosphering_speed} km/h</h4>
                                 <h4>HYPERDRIVE RATING:<br/> {starship.hyperdrive_rating}</h4>
-                                <h4>CARGO CAPACITY:<br/> {starship.cargo_capacity}</h4>
+                                <h4>CARGO CAPACITY:<br/> {starship.cargo_capacity}m³</h4>
                             </div>
                         </div>
                     </div>

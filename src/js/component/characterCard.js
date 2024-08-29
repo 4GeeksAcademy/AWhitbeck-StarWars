@@ -26,12 +26,12 @@ export const CharacterCard = () => {
         }
     }
     return (
-        <div className="card-bg d-flex col-10 overflow-auto mt-5 mx-auto">
+        <div className="card-bg d-flex col-10 overflow-auto my-4 mx-auto">
             {characters?.map((character, index) => (
                 <div className="card" style={{ minWidth: "22rem" }} key={index}>
                     <img src={`https://starwars-visualguide.com/assets/img/characters/${character.uid}.jpg`} />
                     <div className="card-body">
-                        <h5 className="card-title">{character.name}</h5>
+                        <h3 className="card-title text-uppercase fw-bold">{character.name}</h3>
                     </div>
                     <div className="Cardbtn">
                         <Link className="secondpagebutton" to={"/character-description/" + character.uid}>Learn More</Link>

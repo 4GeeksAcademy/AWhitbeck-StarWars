@@ -25,7 +25,7 @@ export const PlanetCard = () => {
         }
     }
     return (
-        <div className="card-bg d-flex col-10 overflow-auto mt-5 mx-auto">
+        <div className="card-bg d-flex col-10 overflow-auto my-4 mx-auto">
             {planets?.map((planet, index) => (
                 <div className="card" style={{ minWidth: "22rem" }} key={index}>
                     <img src={`https://starwars-visualguide.com/assets/img/planets/${planet.uid}.jpg`} />

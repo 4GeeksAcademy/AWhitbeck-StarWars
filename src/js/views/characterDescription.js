@@ -14,6 +14,7 @@ export const CharacterDescription = () => {
         async function getCharacter() {
             const response = await fetch("https://www.swapi.tech/api/people/" + id)
             const data = await response.json()
+            const { store, actions } = useContext(Context)
             setCharacter(data.result.properties)
         }
         getCharacter()
@@ -21,6 +22,14 @@ export const CharacterDescription = () => {
     },
         []
     )
+    const handleFavorite = (character) => {
+        if (store.favorite.includes(character)) {
+            actions.deleteFavorite(character)
+        }
+        else {
+            actions.addFavorite(character)
+        }
+    }
 
     return (
         <section>
@@ -36,11 +45,14 @@ export const CharacterDescription = () => {
                         <h1>{character.name}</h1>
                         <div className="details">
                             <div className="size">
-                                <h4>Birth Year: {character.birth_year}</h4>
-                                <h4>Gender: {character.gender}</h4>
-                                <h4>Height: {character.height}</h4>
-                                <h4>Hair Color: {character.hair_color}</h4>
+                                <h4>BIRTH YEAR:<br/> {character.birth_year}</h4>
+                                <h4>GENDER:<br/> {character.gender}</h4>
+                                <h4>HEIGHT:<br/> {character.height}cm</h4>
+                                <h4>MASS:<br/> {character.mass}kg</h4>
+                                <h4>HAIR COLOR:<br/> {character.hair_color}</h4>
                             </div>
+                            <Link to={"/connections"}>Back</Link>
+                            <button className="secondpagebutton" onClick={() => {handleFavorite(character.name)}}>Favorite</button>
                         </div>
                     </div>
                 </div>

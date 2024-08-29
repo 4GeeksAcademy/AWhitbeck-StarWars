@@ -1,6 +1,7 @@
 import React, { useContext, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
+import { FaJedi } from "react-icons/fa";
 
 export const StarshipsCard = () => {
     const [starships, setStarships] = useState([])
@@ -25,7 +26,7 @@ export const StarshipsCard = () => {
         }
     }
     return (
-        <div className="card-bg d-flex col-10 overflow-auto mt-5 mx-auto">
+        <div className="card-bg d-flex col-10 overflow-auto my-4 mx-auto">
             {starships?.map((starship, index) => (
                 <div className="card" style={{ minWidth: "22rem" }} key={index}>
                     <img src={`https://starwars-visualguide.com/assets/img/starships/${starship.uid}.jpg`} />
@@ -34,7 +35,7 @@ export const StarshipsCard = () => {
                     </div>
                     <div className="Cardbtn">
                         <Link className="secondpagebutton" to={"/starship-description/" + starship.uid}>Learn More</Link>
-                        <button className="secondpagebutton" onClick={() => {handleFavorite(starship.name)}}>Favorite</button>
+                        <button className="secondpagebutton fs-1" onClick={() => {handleFavorite(starship.name)}}><FaJedi /></button>
                     </div>
                 </div>
             ))}

@@ -6,18 +6,18 @@ import "../../styles/descriptionCard.css";
 
 
 export const PlanetDescription = () => {
-    const [Planet, setPlanet] = useState({})
+    const [planet, setPlanet] = useState({})
     const { id } = useParams()
 
 
     useEffect(() => {
         async function getPlanet() {
-            const response = await fetch("https://www.swapi.tech/api/people/" + id)
+            const response = await fetch("https://www.swapi.tech/api/planets/" + id)
             const data = await response.json()
             setPlanet(data.result.properties)
         }
         getPlanet()
-        console.log(Planet)
+        console.log(planet)
     },
         []
     )
@@ -33,13 +33,15 @@ export const PlanetDescription = () => {
                     <img className="helmet"
                         src="http://res.cloudinary.com/prvnbist/image/upload/v1508603573/helmet.png" alt="helmet" />
                     <div className="productInfo">
-                        <h1>{Planet.name}</h1>
+                        <h1>{planet.name}</h1>
                         <div className="details">
                             <div className="size">
-                                <h4>Birth Year: {Planet.birth_year}</h4>
-                                <h4>Gender: {Planet.gender}</h4>
-                                <h4>Height: {Planet.height}</h4>
-                                <h4>Hair Color: {Planet.hair_color}</h4>
+                                <h4>POPULATION:<br/> {planet.population}</h4>
+                                <h4>CLIMATE:<br/> {planet.climate}</h4>
+                                <h4>ROTATIONAL PERIOD:<br/> {planet.rotation_period} Hour(s)</h4>
+                                <h4>ORBITAL PERIOD:<br/> {planet.orbital_period} Day(s)</h4>
+                                <h4>DIAMETER:<br/> {planet.diameter} Meters</h4>
+                                <h4>SURFACE WATER:<br/> {planet.surface_water}%</h4>
                             </div>
                         </div>
                     </div>

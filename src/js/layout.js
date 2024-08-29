@@ -16,6 +16,7 @@ import { StarshipsCard } from "./component/starshipCard";
 import { CharacterCard } from "./component/characterCard";
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
+import { PlanetDescription } from "./views/planetDescription";
 
 
 //create your first component
@@ -30,6 +31,7 @@ const Layout = () => {
 				<ScrollToTop>
 					<Navbar />
 					<Routes>
+						<Route path="/planet-description/:id" element={<PlanetDescription />} />
 						<Route path="/starship-description/:id" element={<StarshipDescription />} />
 						<Route path="/character-description/:id" element={<CharacterDescription />} />
 						<Route path="/connections" element={<Connections />} />
